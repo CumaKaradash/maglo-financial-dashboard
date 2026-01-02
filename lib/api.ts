@@ -105,16 +105,18 @@ export async function fetchScheduledTransfers(token?: string): Promise<Scheduled
 }
 
 export async function loginUser(email: string, password: string): Promise<LoginResponse> {
-  // Yalnızca user@example.com giriş yapabilsin
-  if (email === "user@example.com") {
+  // user@example.com ve trae_test@example.com giriş yapabilsin
+  const allowedEmails = ["user@example.com", "trae_test@example.com"];
+
+  if (allowedEmails.includes(email)) {
     return {
       success: true,
       message: "Giriş başarılı (Mock)",
       data: {
         user: {
-          id: "60d0fe4f5311236168a109ca",
-          fullName: "Mahfuzul Nabil",
-          email: "user@example.com",
+          id: email === "user@example.com" ? "60d0fe4f5311236168a109ca" : "60d0fe4f5311236168a109cb",
+          fullName: email === "user@example.com" ? "Mahfuzul Nabil" : "Trae Test User",
+          email: email,
           role: "user",
           image: "/images/Mahfuzul Nabil.png",
           isActive: true,
