@@ -6,6 +6,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { logout } from "@/lib/api"
+import { toast } from "react-hot-toast"
 
 const navItems = [
   { name: "Dashboard", href: "/dashboard", id: "dashboard" },
@@ -174,8 +175,10 @@ export function SidebarContent() {
 
   const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault()
+    toast.success("Logging out...")
     logout()
-    router.push("/")
+    // Full page reload to clear all state and trigger middleware redirect
+    window.location.href = "/"
   }
 
   return (
