@@ -40,3 +40,5 @@ Projeyi yerel makinenizde test etmek için aşağıdaki adımları izleyebilirsi
 1. Bağımlılıkları yükleyin: `npm install`
 2. Geliştirme sunucusunu başlatın: `npm run dev`
 3. Tarayıcınızdan erişin: `http://localhost:3000`
+---
+<img width="826" height="694" alt="image" src="https://github.com/user-attachments/assets/2cf8a86f-5aee-4eb0-9834-b5395225e093" />
